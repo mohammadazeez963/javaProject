@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class adult {
     public static void main(String[] args) {
-        System.out.println("Enter the Name:");
         Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the Name:");
         String Name = sc.nextLine();
 
         System.out.println("Enter the Age: ");
@@ -17,6 +18,7 @@ public class adult {
         else{
             System.out.println(Name+" is not an Adult");
         }
+        sc.close();
 
 
     }
