@@ -1,5 +1,7 @@
 package basic;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Employee1 {
@@ -72,7 +74,8 @@ class EmployeeSystem {
     static Scanner sc4 = new Scanner(System.in);
     static Scanner sc5 = new Scanner(System.in);
 
-    private static Employee1 addEmployee() {
+    private static void addEmployee() {
+        List<String> nameArray = new ArrayList<>();
         System.out.println("Enter the Employee Name : ");
         String Ename = sc1.nextLine();
         System.out.println("Enter the Employee Role : ");
@@ -85,9 +88,12 @@ class EmployeeSystem {
         double exp = sc5.nextDouble();
 
         Employee1 e = new Employee1(Ename, Erole, Esalary, dob, exp);
-        System.out.println("Employee Added Successfully");
-        System.out.println(e);
-        return e;
+
+        nameArray.add(e.getEname());
+        int a = nameArray.indexOf(e.getEname());
+        System.out.println(nameArray.get(a));
+        System.out.println(nameArray);
+        
     }
 
     public static void main(String[] args) {

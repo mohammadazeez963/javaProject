@@ -12,12 +12,12 @@ public class arrayToList {
         array[3]=21;
         System.out.println(array);
 
-        // List<Integer> list = new ArrayList<>();
-        // for (Integer e : array) {
-        //     list.add(e);
-        // }
+        List<Integer> list = new ArrayList<>();
+        for (Integer e : array) {
+            list.add(e);
+        }
         
-        // System.out.println(list);
+        System.out.println(list);
     }
     public static void main(String[] args) {
        convert();
