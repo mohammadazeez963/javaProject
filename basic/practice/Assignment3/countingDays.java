@@ -13,11 +13,11 @@ public class countingDays {
     public static void main(String[] args) {
         int date = 1;
         int month = 1;
-        int year = 2021;
+        int year = 2020;
 
         int inputDate = 1;
         int inputMonth = 1;
-        int finalYear = 2022;
+        int finalYear = 2021;
        
         
        
@@ -27,8 +27,8 @@ public class countingDays {
         int countingDays = 0;
         for (int i = year; i <= finalYear ; i++) { 
 
-            if(year == finalYear){finalMonth = inputMonth;}            
-            for (int j = month; j < finalMonth; j++) {
+            if(i == finalYear){finalMonth = inputMonth;}            
+            for (int j = month; j <= finalMonth; j++) {
                 
                 
                 
@@ -79,19 +79,21 @@ public class countingDays {
                     default:
                         break;
                 }
-                if(year == finalYear && month == finalMonth){finalDate = inputDate;}
-                for (int j2 = date; j2 < finalDate; j2++) {
+                if(i == finalYear && j == finalMonth){finalDate = inputDate;}
+                int count =0;
+                for (int j2 = date; j2 <= finalDate; j2++) {
 
-                    countingDays++;
-                   
+                    countingDays+=1;
+                   count++;
                     
-                }      
+                }  
+                System.out.println("from "+date+" to "+finalDate+" are " +count);   
                 date =1;         
                 
             }
-           // month = 1;
+            month = 1;
         }
-        System.out.println(finalMonth);
+        System.out.println(countingDays-1);
 
         
     }
