@@ -1,44 +1,39 @@
 package basic.practice.Assignment3;
 
-public class countingDays {
+import java.util.Scanner;
+
+public class findDate {
+    static Scanner sc = new Scanner(System.in);
 
     public static boolean isLeapYear(int year) {
         
-            if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0){
-                return true;
-            }
-            return false;
-      
+        if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0){
+            return true;
+        }
+        return false;
+  
     }
     public static void main(String[] args) {
-        int date = 7;
+
+        int date = 15;
         int month = 5;
-        int year = 1978;
+        int year = 2022;
 
-        int inputDate = 15;
-        int inputMonth = 5;
-        int finalYear = 2022;
-       
-        
-       
-        
-        int finalMonth =12;
+        System.out.println("Enter the no.of days: ");
+        int days = sc.nextInt();
         int finalDate = 30;
-        int countingDays = 0;
-        for (int i = year; i <= finalYear ; i++) { 
+        boolean a = true;
 
-            if(i == finalYear){finalMonth = inputMonth;}            
-            for (int j = month; j <= finalMonth; j++) {
-                
-                
-                
+        while(a){
 
-                switch (j) {
+            for (int i = month; i <= 12; i++) {
+                
+                switch (i) {
                     case 1:
                         finalDate =31;
                         break;
                     case 2:
-                        if (isLeapYear(i)) { finalDate = 29;
+                        if (isLeapYear(year)) { finalDate = 29;
                             
                         } else { finalDate = 28;
                             
@@ -79,23 +74,25 @@ public class countingDays {
                     default:
                         break;
                 }
-                if(i == finalYear && j == finalMonth){finalDate = inputDate;}
-                int count =0;
-                for (int j2 = date; j2 <= finalDate; j2++) {
 
-                    countingDays+=1;
-                   count++;
-                    
-                }  
-                System.out.println("from "+date+" to "+finalDate+" are " +count);   
-                date =1;         
-                
+                for (int j = date; j <= finalDate; j++) {
+
+                    days--;
+                    if(days == 0){
+                        System.out.println((j+1)+"/"+i+"/"+year);
+                        System.exit(0);
+                       
+                    }
+                                  
+                }
+               
+                date = 1;
             }
             month = 1;
-        }
-        System.out.println(countingDays-1);
+            year++;
 
+          
+        }
         
     }
-    
 }
