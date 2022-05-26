@@ -12,12 +12,12 @@ public class countingDMY {
   
     }
     public static void main(String[] args) {
-        int date = 15;
-        int month = 5;
-        int year = 2001;
+        int date = 1;
+        int month = 1;
+        int year = 2021;
     
-        int inputDate = 15;
-        int inputMonth = 5;
+        int inputDate = 1;
+        int inputMonth = 1;
         int finalYear = 2022;
        
         
@@ -25,6 +25,7 @@ public class countingDMY {
         
         int finalMonth =12;
         int finalDate = 30;
+        int EndDate = 30;
         int countingDays = -1;
 
         int D = 0;
@@ -85,21 +86,74 @@ public class countingDMY {
                     default:
                         break;
                 }
+
+                switch (j) {
+                    case 1:
+                        EndDate =31;
+                        break;
+                    case 2:
+                        EndDate =31;
+                        break;
+    
+                    case 3:
+                       
+                        if (isLeapYear(i)) { EndDate = 29;
+                            
+                        } else { EndDate = 28;
+                            
+                        }
+                        break;
+                    case 4:
+                        EndDate =31;
+                        break;
+                    case 5:
+                        EndDate =30;
+                        break;
+                    case 6:
+                        EndDate =31;
+                        break;
+                    case 7:
+                        EndDate =30;
+                        break;
+                    case 8:
+                        EndDate =31;
+                        break;
+                    case 9:
+                        EndDate =31;
+                        break;
+                    case 10:
+                        EndDate =30;
+                        break;
+                    case 11:
+                        EndDate =31;
+                        break;
+                    case 12:
+                        EndDate =30;
+                        break;
+                
+                    default:
+                        break;
+                }
                 if(i == finalYear && j == finalMonth){finalDate = inputDate;}
                 
                 for (int j2 = date; j2 <= finalDate; j2++) {
     
                     countingDays+=1;
                     D++;
-                  if (D == finalDate) {
-                      D = 0;
-                      M++;
-                  }
-                  if (M == 12) {
-                      M = 0;
-                      Y++;
+                    System.out.println(j2+" "+D+" "+EndDate);
+                    if (D == EndDate+1) {
+                        
+
+                        D = 1;
+                        M++;
+
+                        if (M == 12) {
+                          M = 0;
+                          Y++;
+                        }
                       
-                  }
+
+                    }
                     
                 }  
                  
@@ -108,6 +162,7 @@ public class countingDMY {
             }
             month = 1;
         }
+        System.out.println(countingDays);
         System.out.println(Y+" years "+M+" months "+D+" days");
     
         
